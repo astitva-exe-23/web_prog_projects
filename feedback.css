@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%; /* Subtract the width of the sidebar */
+    background: url(rrrr.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    /* Move the main content to the right */
+    z-index: 2;
+    overflow-x: hidden;
+    }
+    .navbar{
+    width: 86%;
+    display:flex;
+    margin: auto;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    }
+    .navbar .logo{
+    width:110px;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-left: -2%;
+    }
+    ul{
+    margin-top: -1%;
+    }
+    
+    ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 16px;
+    }
+    
+    ul li a{
+    font-size: 16px;
+    font-weight:bold ;
+    font-style: oblique;
+    text-decoration: none;
+    color:rgb(249, 248, 251);
+    margin-top:1%;
+    transition:.4s ease ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    ul li a:hover{
+    color:#720455 ;
+    }
+
+    h2{
+        color: #e8e8e8;
+    }
+
+.mb-4.small{
+color: #4caf50;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+       }
+       
+       #feedback_form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #e8e8e8; /* Grey background */
+        margin: 0 auto; /* Center the form horizontally */
+        max-width: 800px; /* Set a maximum width for the form */
+       }
+       
+       .form-check {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+       }
+       
+       .form-check-input {
+        cursor: pointer;
+       }
+       
+       .form-control {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+       }
+       
+       .btn-success {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+       }
+       
+       .btn-success:hover {
+        background-color: #45a049;
+       }
+       footer {
+    
+        padding: 20px 0;
+        text-align: center;
+       }
+       
+       .social-icons {
+        display: flex;
+        justify-content: space-around;
+        max-width: 800px;
+        margin: 0 auto;
+       }
+       
+       .social-icons img {
+        height: 50px;
+        width: 50px;
+       }
+       

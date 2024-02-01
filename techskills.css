@@ -1,0 +1,121 @@
+*{
+margin: 0;
+padding: 0;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+box-sizing: border-box;
+}
+
+.container {
+width: 100%; /* Subtract the width of the sidebar */
+background: url(HEHE.gif);
+background-position: center;
+background-size: cover;
+min-height: 100vh;
+position:absolute;
+justify-content: center;
+align-items: center;
+/* Move the main content to the right */
+z-index: 2;
+overflow-x: hidden;
+}
+.navbar{
+width: 86%;
+display:flex;
+margin: auto;
+padding: 15px 0;
+align-items: center;
+justify-content: space-between;
+
+
+}
+.navbar .logo{
+width:110px;
+cursor: pointer;
+margin-top: 1%;
+margin-left: -2%;
+}
+ul{
+margin-top: -1%;
+}
+
+ul li{
+list-style: none;
+display: inline-block;
+padding: 10px 16px;
+}
+
+ul li a{
+font-size: 16px;
+font-weight:bold ;
+font-style: oblique;
+text-decoration: none;
+color:rgb(249, 248, 251);
+margin-top:1%;
+transition:.4s ease ;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul li a:hover{
+color:#720455 ;
+}
+
+.skills{
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  
+  .skill-name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  
+  .skill-bar{
+    height: 14px;
+    background: #282828;
+    border-radius: 3px;
+  }
+  
+  .skill-per{
+    height: 14px;
+    background: #d13639;
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+  }
+  
+  .skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+  }
+  
+  .skill-per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f1f1f1;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+  }
+  
+  @keyframes fillBars{
+    from{
+      width: 0;
+    }
+    to{
+      width: 100%;
+    }
+  }

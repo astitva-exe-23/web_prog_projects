@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%; /* Subtract the width of the sidebar */
+    background: url(black.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    /* Move the main content to the right */
+    z-index: 2;
+    overflow-x: hidden;
+    }
+    .navbar{
+    width: 86%;
+    display:flex;
+    margin: auto;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    }
+    .navbar .logo{
+    width:110px;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-left: -2%;
+    }
+    ul{
+    margin-top: -1%;
+    }
+    
+    ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 16px;
+    }
+    
+    ul li a{
+    font-size: 16px;
+    font-weight:bold ;
+    font-style: oblique;
+    text-decoration: none;
+    color:rgb(249, 248, 251);
+    margin-top:1%;
+    transition:.4s ease ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    ul li a:hover{
+    color:#720455 ;
+    }
+
+
+.imgcontainer{
+        display: flex;
+        flex-direction: column;
+}
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+    div.gallery {
+        flex: 1;
+    margin: 5px;
+        border: 1px solid #ccc;
+        background: #343434;
+        transition: 1.5s ease;
+      }
+      
+      div.gallery:hover {
+        box-shadow: 0px 30px 400px 0px #ec5706;
+      border:1px solid transparent;
+      }
+      
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+      
+      div.desc {
+        padding: 15px;
+        text-align: center;
+        font-size: larger;
+        font-weight: 900;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+      }
+      
+      @media only screen and (max-width: 700px) {
+        .responsive {
+          width: 49.99999%;
+          margin: 6px 0;
+        }
+      }
+      
+      @media only screen and (max-width: 500px) {
+        .responsive {
+          width: 100%;
+        }
+      }
+      
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .heading{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: aliceblue;
+        text-decoration: overline;
+        text-align: center;
+        font-style: italic;
+      }
