@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: bisque;
+    }
+    form {
+        max-width: 600px;
+        margin: 0 auto; 
+    }
+    input[type="text"], input[type="date"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: burlywood ;
+    }
+    input[type="submit"] {
+        background-color: #101110;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    input[type="submit"]:hover {
+        background-color: #c51616;
+    }
+    .resume {
+        display: none;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc; 
+        border-radius: 4px;
+        margin-top: 7ch;
+    }
+    textarea{
+        background-color: #e8ae49;
+    }
+</style>
+</head>
+<body>
+<h1>Generate Your Resume</h1>
+<form id="resumeForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+
+    <label for="bio">Short Bio:</label>
+    <textarea id="bio" name="bio" rows="4" required></textarea><br>
+
+    <!-- New fields -->
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br>
+
+    <label for="education">Education:</label>
+    <input type="text" id="education" name="education" required><br>
+
+    <label for="experience">Experience:</label>
+    <textarea id="experience" name="experience" rows="4" required></textarea><br>
+
+    <label for="skills">Skills:</label>
+    <textarea id="skills" name="skills" rows="4" required></textarea><br>
+
+    <input type="submit" value="Generate Resume">
+</form>
+
+<div id="generatedResume" class="resume">
+    <h2>Generated Resume</h2>
+    <p><strong>Name:</strong> <span id="resumeName"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="resumeDOB"></span></p>
+    <p><strong>Email:</strong> <span id="resumeEmail"></span></p>
+    <p><strong>Phone Number:</strong> <span id="resumePhone"></span></p>
+    <p><strong>Age:</strong> <span id="resumeAge"></span></p>
+    <p><strong>Short Bio:</strong></p>
+    <p id="resumeBio"></p>
+
+    <!-- Displaying new fields -->
+    <p><strong>Address:</strong> <span id="resumeAddress"></span></p>
+    <p><strong>Education:</strong> <span id="resumeEducation"></span></p>
+    <p><strong>Experience:</strong></p>
+    <p id="resumeExperience"></p>
+    <p><strong>Skills:</strong></p>
+    <p id="resumeSkills"></p>
+</div>
+
+<script>
+    document.getElementById("resumeForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        generateResume();
+    });
+
+    function generateResume() {
+        var name = document.getElementById("name").value;
+        var dob = new Date(document.getElementById("dob").value);
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var bio = document.getElementById("bio").value;
+        var address = document.getElementById("address").value;
+        var education = document.getElementById("education").value;
+        var experience = document.getElementById("experience").value;
+        var skills = document.getElementById("skills").value;
+
+        var age = calculateAge(dob);
+
+        document.getElementById("resumeName").textContent = name;
+        document.getElementById("resumeDOB").textContent = dob.toDateString();
+        document.getElementById("resumeEmail").textContent = email;
+        document.getElementById("resumePhone").textContent = phone;
+        document.getElementById("resumeAge").textContent = age;
+        document.getElementById("resumeBio").textContent = bio;
+        document.getElementById("resumeAddress").textContent = address;
+        document.getElementById("resumeEducation").textContent = education;
+        document.getElementById("resumeExperience").textContent = experience;
+        document.getElementById("resumeSkills").textContent = skills;
+
+        document.getElementById("generatedResume").style.display = "block";
+    }
+
+    function calculateAge(birthDate) {
+        var today = new Date();
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+</script>
+
+</body>
+</html>
